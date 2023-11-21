@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+       Amount: <input type="text" id="a1"> <br><br>
+       Exp: <input type="text" id="E1">
+       <select name="" id="slct">
+        <option value="days">days</option>
+        <option value="months">months</option>
+       </select> <br><br>
+       <button onclick="handleclick()" >print</button>
+       <h1 id="dh1"></h1>
+       <script>
+            function handleclick(){
+                var amount= +document.getElementById("a1").value
+                var exp= +document.getElementById("E1").value
+                var Slct= document.getElementById("slct").value
+               
+                var res = amount/exp
+                // console.log(res+Slct)
+                document.getElementById("dh1").innerHTML=res+Slct
+            }
+       </script>
+    </body>
+</html>

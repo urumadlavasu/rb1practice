@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            #countries{
+                display: flex;
+                flex-wrap: wrap;
+                border: 2px solid;
+                justify-content: space-around;
+            }
+
+            #countries li {
+                border: 2px solid grey;
+                padding: 10px;
+                margin: 10px;
+                width: 200px ;
+                list-style: none;
+                text-align: center;
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>COUNTRIES</h1>
+        <ul id="countries">
+             </ul>
+        <script>
+            var countries = [];
+            fetch("https://restcountries.com/v3/all").then(function(res){
+                res.json().then(function(data){
+                    console.log(data)
+                    countries = data;
+                    genUI();
+                })
+            })
+            function genUI(){
+                countries.forEach(function(country){
+                    var nli = document.createElement("li");
+                    document.getElementById("countries").appendChild(nli);
+                
+                    var ncountryname = document.createElement("h2")
+                    ncountryname.innerHTML=country.name.common
+                    nli.appendChild(ncountryname)
+                
+                    var nimg = document.createElement("img")
+                    nimg.src= country.flags[0]
+                    nimg.style.width="100px"
+                    nli.appendChild(nimg)
+                    
+                    var ncapital = document.createElement("h3")
+                    ncapital.innerHTML=(country.capital) ? country.capital : "No capital city"
+                    nli.appendChild(ncapital)
+
+                    var population = document.createElement("h2");
+                    population.innerHTML= country.population;
+                    nli.appendChild(population)
+                    
+                    
+                    
+                    
+                    
+                    
+               })
+            }
+        </script>
+    </body>
+</html>

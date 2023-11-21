@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+<script>
+    var ar = [7, 8]
+    var num = +prompt()
+    for (var i = 0; i <= ar.length - 2; i++) {
+
+        if (ar[i] + ar[i + 1] === num || ar[i] - ar[i + 1] === num || ar[i] * ar[i + 1] === num || ar[i+1]-ar[i]===num) {
+
+            if (ar[i] + ar[i + 1] === num) {
+                console.log("Addition")
+            }
+            if (ar[i] - ar[i + 1] === num || ar[i+1] - ar[i] === num) {
+                console.log("subtraction")
+            }
+            if (ar[i] * ar[i + 1] === num) {
+                console.log("multiplication")
+            }
+        }
+        else {
+            console.log("not valid")
+        }
+    }
+
+
+
+</script>
+
+</html>

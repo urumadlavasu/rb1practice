@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="d3"></div>
+        <script type="text/babel">
+            var Counter = function(){
+               var[c,setC] = React.useState(0)
+               var[d,setD] = React.useState(34)
+
+               function inc(){
+                setC(c+1)
+               }
+
+               function dec(){
+                setC(c-1)
+               }
+               React.useEffect(()=>{console.log("useEffect with depd")},[]) 
+               React.useEffect(()=>{console.log("useEffect with nodepd")});
+               React.useEffect(()=>{console.log("useEffect with varname c depend")},[c])
+                return(
+                    <div>
+                        <h1>Counter:{c}</h1>
+                        <button onClick={()=>{inc()}}>Increment</button>
+                        <button onClick={()=>{dec()}}>Decrement</button>
+                        <button onClick={()=>{setD(d+10)}}>withvarname</button>
+                        <h1>d value :: {d}</h1>
+                    </div>
+                )
+                }
+            ReactDOM.render(<Counter/>,document.getElementById("d3"))
+        </script>
+    </body>
+</html>

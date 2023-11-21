@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="inpt1">
+        <input type="text" id="inpt2">
+        <button onclick="handleclick()" >Ratio</button>
+        <h1 id="dh1"></h1>
+        <script>
+            function handleclick(){
+           var numer = document.getElementById("inpt1").value
+           var denomi = document.getElementById("inpt2").value
+           for(var i=denomi ;i>1;i--){
+              if(numer%i===0 && denomi%i===0){
+                numer=numer/i;
+                denomi=denomi/i;
+              }
+           }
+           
+           document.getElementById("dh1").innerHTML= numer +" : "+denomi
+            }
+        </script>
+    </body>
+</html>

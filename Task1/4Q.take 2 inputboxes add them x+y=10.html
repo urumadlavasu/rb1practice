@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" name="" id="inpt1"> &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="" id="inpt2"> <br> <br>
+        <button onclick="handleclick()">Add input values X+Y</button>
+        <h1 id="dh1"></h1>
+
+
+        <script>
+           function handleclick(){
+            var x =+document.getElementById("inpt1").value
+           var y =+document.getElementById("inpt2").value
+           
+            if(x<10 && y<10 && x+y<=10 ){
+            // console.log(x+y)
+            document.getElementById("dh1").innerHTML=x+y +" valid"
+           }
+           else{
+            // console.log("invalid")
+            document.getElementById("dh1").innerHTML="invalid"
+
+           }
+           }
+          
+        </script>
+    </body>
+</html>

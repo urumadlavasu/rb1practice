@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+             ul li{
+                border: 1px solid;
+                padding: 10px;
+                margin: 10px;
+                list-style: none;
+            }
+
+            ul li::first-letter{
+                text-transform: uppercase;
+            }
+
+            .completed{
+                background-color: green;
+            }
+            .incomplete{
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="d3"></div>
+        <script type="text/babel">
+
+            function Todo(props){
+             return (
+                 <li class={props.todo.status=== 'true'? "completed":"incomplete"}>{props.todo.title}
+                    <button onClick={()=>{props.deltodo(props.i)}}>Deltodo</button>
+                 </li>
+             )
+         }
+
+            function Todolist(){
+              var[todos,setTodos] = React.useState(
+                [
+                    {
+                        title:"clean car",
+                        status:"true"
+                    },
+                    {
+                        title:"pay bills",
+                        status:"false"
+                    },
+                    {
+                        title:"get BMW",
+                        status:"true"
+                    },
+                    {
+                        title:"play Cricket",
+                        status:"false"
+                    },
+                    {
+                        title:"work hard",
+                        status:"true"
+                    }
+                ]
+              )
+              function deltodo(ind){
+                var temp = [...todos]
+                temp.splice(ind,1)
+                setTodos([...temp])
+              }
+                return(
+                       <ul>
+                        {
+                            todos.map((todo,i)=>{
+                                return <Todo todo={todo} deltodo={deltodo} i={i}></Todo>
+                                
+                                
+                            })
+                        }
+
+                            </ul>
+                )
+            }
+            ReactDOM.render(<Todolist/>,document.getElementById("d3"))
+        </script>
+    </body>
+</html>

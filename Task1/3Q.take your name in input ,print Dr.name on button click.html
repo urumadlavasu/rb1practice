@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="inpt">
+        <button onclick="handleclick()" >print Dr.</button>
+        <h1 id="dh1"></h1>
+        <script>
+         function handleclick(){
+            var x = document.getElementById("inpt").value
+            document.getElementById("dh1").innerHTML="Dr."+x
+             document.getElementById("inpt").value=''
+
+         }
+        </script>
+    </body>
+</html>

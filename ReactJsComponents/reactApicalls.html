@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js" integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            ul li{
+                border: 1px solid gray;
+                padding: 10px;
+                margin: 10px;
+                list-style: none;
+                text-align: center;
+               width: 350px;
+                
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d3"></div>
+       <script type="text/babel">
+        function Countries(){
+            var [allcountries,setAllcountries] = React.useState([])
+           
+            React.useEffect(()=>{
+                axios.get("https://restcountries.com/v3/all")
+            .then((res)=>{
+                 setAllcountries([...res.data])
+            })
+            },[])
+            return <div>
+                <h1>Countries</h1>
+                <ul>
+                {
+                     allcountries.map((c)=>{
+                        return <li>
+                           <h1>COUNTRY NAME: {c.name.common} </h1>
+                            <img src={c.flags[1]} width="100%" alt=""/>
+                            <h2>CAPITAL : {c.capital}</h2>
+                            <h2>POPULATION : {c.population}</h2>
+                            </li>
+
+                    })
+                }
+                </ul>
+                  </div>
+        }
+        ReactDOM.render(<Countries/>,document.getElementById("d3"))
+       </script>
+    </body>
+</html>

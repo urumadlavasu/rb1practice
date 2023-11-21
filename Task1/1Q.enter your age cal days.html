@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+
+       <input type="text" placeholder=" Enter your Age:" name="" id="inpt">
+           <button onclick="handleclick()" >Calculate days</button>
+           <h1 id="dh1"></h1>
+        <script>
+            function handleclick(){
+              var x = document.getElementById("inpt").value
+                document.getElementById("dh1").innerHTML=x*365+" days"
+                document.getElementById("inpt").value=''
+              
+           
+             
+            }
+        </script>
+    </body>
+</html>

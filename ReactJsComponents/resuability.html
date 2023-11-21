@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .mybox{
+                border: 1px solid;
+                padding: 10px;
+            }
+        </style>
+        <body>
+            <div id="d2"></div>
+            <script type="text/babel">
+                function Counter(prop){
+                    console.log(prop)
+                   var[count,setCount] = React.useState(prop.x)
+                   function inc(){
+                    setCount(count+prop.y)
+                   }
+
+                   function dec(){
+                    setCount(count-prop.y)
+                   }
+                    return(
+                        <div className="mybox">
+                            <h1>Counter:{count}</h1>
+                            <button onClick={()=>{inc()}}>Inc</button>
+                            <button onClick={()=>{dec()}}>Dec</button>
+                        </div>
+                    )
+                }
+                
+                function App(){
+                    return(
+                      <div>
+                        <Counter x={2} y={2}/>
+                        <Counter x={5} y={6}/>
+                        <Counter x={100} y={100}/>
+                        </div>
+                    )
+                }
+                ReactDOM.render(<App/>,document.getElementById("d2"))
+            </script>
+        </body>
+    </head>
+</html>

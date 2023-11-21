@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <input type="text" id="inpt" >
+        <button onclick="handleclick()" >submit</button>
+        <h1></h1>
+        <a href="https://www.google.com/search?q=sachin+tendulkar&rlz=1C1RXQR_enIN995IN995&oq=sac&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyEggCEC4YQxiDARixAxiABBiKBTIPCAMQABhDGLEDGIAEGIoFMhIIBBAuGEMYgwEYsQMYgAQYigUyDAgFEC4YQxiABBiKBTIPCAYQLhhDGLEDGIAEGIoFMgcIBxAuGIAEMhIICBAuGEMYgwEYsQMYgAQYigUyBwgJEAAYjwLSAQgyODgzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8">HTML</a>
+        <script>
+            function handleclick(){
+                var x = document.getElementById("inpt").value;
+              var nh1 =  document.createElement("h1");
+              nh1.innerHTML=x
+              document.body.appendChild(nh1)
+            }
+
+            for(var i=1;i<=10;i++){
+                console.log(i)
+            }
+
+          
+        //     var a = 3;
+        //     var b = "7"
+        //     var c=a+b
+        //     console.log(c)
+        //   console.log( parseInt(b))
+        //   console.log(b) 
+        </script>
+    </body>
+</html>

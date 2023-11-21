@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="inpt1">
+        <input type="text" id="inpt2">
+        <button onclick="handleclick()" >Add X+Y</button>
+        <h1 id="dh1" ></h1>
+        <script>
+            function handleclick(){
+            var x=+document.getElementById("inpt1").value
+            var y=+document.getElementById("inpt2").value
+          
+            if(x<100 && y<100 && x+y<=100){
+                document.getElementById("dh1").innerHTML=x+y
+            }
+            else{
+                document.getElementById("dh1").innerHTML="invalid"
+            }
+            }
+        </script>
+    </body>
+
+</html>

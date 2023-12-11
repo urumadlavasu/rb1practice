@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+            #d2{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="dec(1,0)">-1</button>
+        <span id="d1">0</span>
+        <button  onclick="inc(1,0)">+1</button>
+        <br>
+        <br>
+        <button onclick="dec(0,100)">-100</button>
+        <span id="d2" >0</span>
+        <button onclick="inc(0,100)" >+100</button>
+        <script>
+           var countbyone = 0;
+           var countbyhundread = 0;
+          
+           function dec(x,y){
+            countbyone = countbyone - x
+            document.getElementById("d1").innerHTML= countbyone;
+            
+            countbyhundread = countbyhundread - y
+            document.getElementById("d2").innerHTML = countbyhundread
+           }
+           function inc(x,y){
+            countbyone = countbyone + x
+            document.getElementById("d1").innerHTML= countbyone
+
+            countbyhundread = countbyhundread + y
+            document.getElementById("d2").innerHTML=countbyhundread
+           }
+        </script>
+    </body>
+</html>

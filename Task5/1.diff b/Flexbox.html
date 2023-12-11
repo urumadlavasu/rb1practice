@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <style>
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .mybox{
+                border: 1px solid;
+                padding: 20px;
+                margin: 20px;
+                width: 20px;
+                text-align: center;
+                background-color: aqua;
+            }
+            #d1{
+                display: flex;
+                justify-content: center;
+            }
+            .smallcnt{
+                border: 1px solid;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 50%;
+                background-color:black;
+            }
+            .btn{
+                width: 50%;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="color:red;">Flexbox justify-content Property Visualized</h1>
+            <div class="smallcnt" id="dh1" >
+                    <div class="mybox">1</div>
+                    <div class="mybox">2</div>
+                    <div class="mybox">3</div>
+                    <div class="mybox">4</div>
+                    <div class="mybox">5</div>
+            </div> <br> <br><br>
+       <button class="btn" onclick="handleClick()">flex-start</button> <br>
+       <button class="btn" onclick="handleClick1()">flex-end</button><br>
+       <button class="btn" onclick="handleClick2()">space-between</button><br>
+       <button class="btn" onclick="handleClick3()">center</button><br>
+       <button class="btn" onclick="handleClick4()">space-around</button>
+        </div>
+       <script>
+        function handleClick(){
+            var x = document.getElementsByClassName("smallcnt")
+            var y = x[0]
+            y.style.justifyContent="start"
+            
+        }
+        function handleClick1(){
+            var x = document.getElementsByClassName("smallcnt")
+            var y = x[0];
+            y.style.justifyContent="end"
+        }
+        function handleClick2(){
+            var x = document.getElementsByClassName("smallcnt")
+            var y = x[0];
+            y.style.justifyContent="space-between"
+        }
+        function handleClick3(){
+            var x= document.getElementsByClassName("smallcnt")
+            var y = x[0];
+            y.style.justifyContent="center"
+        }
+        function handleClick4(){
+            var x= document.getElementsByClassName("smallcnt")
+            var y = x[0];
+            y.style.justifyContent="space-around"
+        }
+            
+       </script>
+
+    </body>
+</html>

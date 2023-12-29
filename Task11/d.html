@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            #d2{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
+        <body>
+            <span id="d1" >A</span> <br> <br>
+            <button onclick = inc(1) >inc1</button> 
+            <button onclick = inc(2)>inc2</button> 
+            <button onclick = inc(3)>inc3</button> 
+            <button onclick = inc(4)>inc4</button> 
+            <button onclick = inc(5)>inc5</button>     
+            <br>
+            <br>
+            <span id="d2" >B</span> <br> <br>
+            <button onclick = dec(1) >dec1</button> 
+            <button onclick = dec(2)>dec2</button> 
+            <button onclick = dec(3)>dec3</button> 
+            <button onclick = dec(4)>dec4</button> 
+            <button onclick = dec(5)>dec5</button> 
+            <script>
+                var countbyvalue1 = 0;
+                var countbyvalue2 = 0;
+                function inc(x){
+                    countbyvalue1 = countbyvalue1 + x;
+                    document.getElementById("d1").innerHTML = countbyvalue1
+                }
+                function dec(x){
+                    countbyvalue2 = countbyvalue2 - x;
+                    document.getElementById("d2").innerHTML = countbyvalue2
+                }
+            </script>
+        </body>
+    </head>
+</html>

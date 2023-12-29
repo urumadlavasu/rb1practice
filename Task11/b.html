@@ -10,23 +10,18 @@
     </head>
     <body>
         <span id="d1">0</span> <br> <br>
-        <button onclick="inc(1,2,3)">1</button>
-        <button onclick="inc(1,2,3)">2</button>
-        <button onclick="inc(1,2,3)">3</button>
+        <button onclick="inc(1)">1</button>
+        <button onclick="inc(2)">2</button>
+        <button onclick="inc(3)">3</button>
     </body>
     <script>
-        var countbyvalue1 = 0
-        var countbyvalue2 = 0
-        var countbyvalue3 = 0
-        function inc(x,y,z){
+        var countbyvalue1 = 0;
+        // var countbyvalue2 = 0;
+        // var countbyvalue3 = 0;
+       
+        function inc(x){
             countbyvalue1 = countbyvalue1 + x;
             document.getElementById("d1").innerHTML = countbyvalue1;
-
-            countbyvalue2 = countbyvalue2 + y;
-            document.getElementById("d1").innerHTML = countbyvalue2
-
-            countbyvalue3 = countbyvalue3 + z;
-            document.getElementById("d1").innerHTML = countbyvalue3
         }
     </script>
 </html>

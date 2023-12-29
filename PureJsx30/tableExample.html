@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       <script src="./products.js"></script>
+    </head>
+    <body>
+        <div id="d1" ></div>
+        <script type="text/babel" >
+            function Products(){
+               var [allproducts,setAllProducts] = React.useState(products)
+               var [order, setOrder] = React.useState(true)
+               console.log(allproducts)
+               function sortProduct(key){
+                   var temp=allproducts;
+                   temp.sort((a,b)=>{
+                    if(a[key]>b[key]){return true?1:-1}
+                    else{return true? -1 : 1}
+                   })
+                   setOrder(!true)
+                   selectedProp(key)
+                   setAllProducts([...temp])
+               }
+                return(
+                    <table className="table table-border table-striped" border="1px" >
+                        <thead style={{position:'sticky' , top:'0px',backgroundColor:"lightgreen"}} className='bg-success' >
+                                <th onClick={()=>{sortProduct('title')}}>Title
+                                    {selectedProp==='title' ? (<span>^</span>):(<></>)}
+                                </th>
+                                <th onClick={()=>{sortProduct('price')}}>Price
+                                    {selectedProp==='title' ? (<span>^</span>):(<></>)}
+                                </th>
+                                <th>Description</th>
+                                <th onClick={()=>{sortProduct('category')}}>Category
+                                    {selectedProp==='title' ? (<span>^</span>):(<></>)}
+                                </th>
+                        </thead>
+                        <tbody>
+                        {
+                            allproducts.map((p)=>{
+                                return(
+                                    <tr>
+                                        <td >{p.title}</td>
+                                        <td >{p.price}</td>
+                                        <td>{p.description.slice(0,100)}</td>
+                                        <td >{p.category}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
+                    </table>
+                )
+            }
+            ReactDOM.render(<Products></Products>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

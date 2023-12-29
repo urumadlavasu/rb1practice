@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            #d2{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
+        <body>
+            <span id="d1" >A</span> <br> <br>
+            <button onclick = inc(1) >inc1</button> 
+            <button onclick = inc(2)>inc2</button> 
+            <button onclick = inc(3)>inc3</button> 
+            <button onclick = inc(4)>inc4</button> 
+            <button onclick = inc(5)>inc5</button>     
+            <br>
+            <br>
+            <span id="d2" >B</span> <br> <br>
+            <button onclick = increase(1) >inc1</button> 
+            <button onclick = increase(2)>inc2</button> 
+            <button onclick = increase(3)>inc3</button> 
+            <button onclick = increase(4)>inc4</button> 
+            <button onclick = increase(5)>inc5</button> 
+            <br> 
+            <br>
+            <button onclick = equal() >Equal</button> &nbsp;
+            <button onclick = diff()>Difference</button>
+            <h1 id="dh" ></h1>
+            <script>
+                var i = 0;
+                var j = 0;
+                function inc(x){
+                  i =  x;
+                    document.getElementById("d1").innerHTML = i
+                    
+                }
+                function increase(x){
+                  j =  x;
+                    document.getElementById("d2").innerHTML = j
+                }
+                function equal(){
+                    if(i==j){
+                        document.getElementById("dh").innerHTML = "Both are Equal"
+                    } else{
+                        document.getElementById("dh").innerHTML = "NotEqual"
+
+                    }
+                }
+                function diff(){
+                    document.getElementById("dh").innerHTML = i - j
+
+                }
+            </script>
+        </body>
+    </head>
+</html>

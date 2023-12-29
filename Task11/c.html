@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+            #d2{
+                border: 1px solid;
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="d1" >Team A</span> <br> <br>
+        <button onclick="inc(1)">x</button> &nbsp; &nbsp;
+        <button onclick="inc(1)">y</button> 
+          <br> 
+          <br>
+          <br>
+          <span id="d2" >Team B</span>  <br> <br>
+          <button onclick="dec(1)">x</button> &nbsp; &nbsp;
+          <button onclick="dec(1)">y</button>
+        <script>
+            var countinc = 0 ;
+            var countdec = 0;
+            function inc(x){
+                countinc = countinc + x
+                document.getElementById("d1").innerHTML= countinc
+            }
+            function dec(x){
+                countdec = countdec - x;
+                document.getElementById("d2").innerHTML= countdec
+            }
+        </script>
+    </body>
+</html>

@@ -1,51 +1,65 @@
 <html>
-    <head>
-        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-        <style>
-            .empty {
-                color: rgba(10, 10, 10, 0.4);
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>
+        .empty {
+            color: rgba(10, 10, 10, 0.4);
+        }
+
+        .orange {
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Rating() {
+            var [index, setIndex] = React.useState(0)
+            function colorit(i) {
+                setIndex(i)
             }
-            .orange{
-                color: orangered;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="d1"></div>
-        <script type="text/babel" >
-            function Rating(){
-                var [index,setIndex] = React.useState(1)
-                function colorit(i){
-                    setIndex(i)
-                }
-                // console.log(index)
-                 var emojis = ['',"bi bi-emoji-frown","bi bi-emoji-tear","bi bi-emoji-astonished","bi bi-emoji-smile","bi bi-emoji-heart-eyes"]
-                return(
-                    <div>
-                        <div  id="rating" className="container d-flex flex-wrap flex-row justify-content-center " >
-                            <i onMouseOver={()=>{colorit(1)}} className = {index>=1 ?"orange":"empty"} >&#9733;</i>
-                            <i onMouseOver={()=>{colorit(2)}} className = {index>=2 ?"orange":"empty"} >&#9733;</i>
-                            <i onMouseOver={()=>{colorit(3)}} className = {index>=3 ?"orange":"empty"} >&#9733;</i>
-                            <i onMouseOver={()=>{colorit(4)}} className = {index>=4 ?"orange":"empty"} >&#9733;</i>
-                            <i onMouseOver={()=>{colorit(5)}} className = {index>=5 ?"orange":"empty"} >&#9733;</i>
-                        </div>
-                        
-                        <div className="text-center" >
-                           <h6>Rating : {index}/5</h6>
-                        </div>
-                        <div className="text-center" >
-                            <i className={emojis[index]}></i>
-                        </div>
+            // console.log(index)
+            var emojis = ['', "bi bi-emoji-frown", "bi bi-emoji-tear", "bi bi-emoji-astonished", "bi bi-emoji-smile", "bi bi-emoji-heart-eyes"]
+            return (
+                <div>
+                    <div id="rating" className="container d-flex flex-wrap flex-row justify-content-center " >
+                        <i onMouseOver={() => { colorit(1) }} className={index >= 1 ? "orange" : "empty"} >&#9733;</i>
+                        <i onMouseOver={() => { colorit(2) }} className={index >= 2 ? "orange" : "empty"} >&#9733;</i>
+                        <i onMouseOver={() => { colorit(3) }} className={index >= 3 ? "orange" : "empty"} >&#9733;</i>
+                        <i onMouseOver={() => { colorit(4) }} className={index >= 4 ? "orange" : "empty"} >&#9733;</i>
+                        <i onMouseOver={() => { colorit(5) }} className={index >= 5 ? "orange" : "empty"} >&#9733;</i>
                     </div>
-                    
-                    
-                )
-            }
-            ReactDOM.render(<Rating/>,document.getElementById("d1"))
-        </script>
-    </body>
+
+                    <div className="text-center" >
+                        <h6>Rating : {index}/5</h6>
+                    </div>
+                    <div className="text-center" >
+                        {
+                            emojis.map((e, ind) => {
+                                if (index >= (ind + 1)) {
+                                    return (
+                                        <i className={emojis[ind + 1]}></i>
+
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                </div>
+
+
+            )
+        }
+        ReactDOM.render(<Rating />, document.getElementById("d1"))
+    </script>
+</body>
+
 </html>
